@@ -23,6 +23,7 @@ public class Sorting {
         int bSarr[] = {75, 32, 56, 89, 12, 17, 3, 98, 76};
         int mSarr[] = {65, 89, 32, 567, 1, 19, 98, 43, 59, 87};
         int sSarr[] = {12, 76, 49, 50, 32, 87, 20};
+        int iSarr[] = {93, 45, 67, 32, 90, 3, 17, 29};
         
         Sorting sort = new Sorting();
         //BubbleSort
@@ -60,6 +61,18 @@ public class Sorting {
         elapsedTime = stopTime - startTime;
         System.out.println("\nSelection Sorted Array: ");
         sort.printArray(sSarr);
+        System.out.println("\nTime Taken: " + elapsedTime + "ms");
+        
+        //Insertion Sort
+        System.out.println("\nGiven Insertion Sort Array:");
+        sort.printArray(iSarr);
+        startTime = System.currentTimeMillis();
+        InsertionSort is = new InsertionSort();
+        is.sort(iSarr);
+        stopTime = System.currentTimeMillis();
+        elapsedTime = stopTime - startTime;
+        System.out.println("\nInsertion Sorted Array:");
+        sort.printArray(iSarr);
         System.out.println("\nTime Taken: " + elapsedTime + "ms");
     }
     
