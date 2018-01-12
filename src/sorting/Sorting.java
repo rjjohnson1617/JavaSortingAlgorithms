@@ -28,6 +28,8 @@ public class Sorting {
         int qSarr[] = {45, 76, 43, 12, 19, 78, 90, 104};
         int rSarr[] = {98, 65, 49, 76, 12, 37, 48, 145, 27};
         char cSarr[] = {'f', 'y', 's', 'p', 'a', 'b', 'n', 'l'};
+        int b2Sarr[] = {1, 3, 7, 4, 2, 9, 7, 10, 6};
+        int s2Sarr[] = {87, 34, 67, 56, 92, 12, 90};
         
         Sorting sort = new Sorting();
         //BubbleSort
@@ -120,7 +122,7 @@ public class Sorting {
         //Counting Sort
         System.out.println("\nGiven Counting Sort Array:");
         for(int i=0; i<cSarr.length; ++i)
-            System.out.print(cSarr[i] + ", ");
+            System.out.print(cSarr[i] + " ");
         startTime = System.currentTimeMillis();
         CountingSort cs = new CountingSort();
         cs.sort(cSarr);
@@ -128,7 +130,31 @@ public class Sorting {
         elapsedTime = stopTime - startTime;
         System.out.println("\nCounting Sorted Array:");
         for(int j=0; j<cSarr.length; ++j)
-            System.out.print(cSarr[j] + ", ");
+            System.out.print(cSarr[j] + " ");
+        System.out.println("\nTime Taken: " + elapsedTime + "ms");
+        
+        //Bucket Sort
+        System.out.println("\nGiven Bucket Sort Array:");
+        sort.printArray(b2Sarr);
+        startTime = System.currentTimeMillis();
+        BucketSort b2s = new BucketSort();
+        b2s.sort(b2Sarr, 10);
+        stopTime = System.currentTimeMillis();
+        elapsedTime = stopTime - startTime;
+        System.out.println("\nBucket Sorted Array:");
+        sort.printArray(b2Sarr);
+        System.out.println("\nTime Taken: " + elapsedTime + "ms");
+        
+        //Shell Sort
+        System.out.println("\nGiven Shell Sort Array:");
+        sort.printArray(s2Sarr);
+        startTime = System.currentTimeMillis();
+        ShellSort s2s = new ShellSort();
+        s2s.sort(s2Sarr);
+        stopTime = System.currentTimeMillis();
+        elapsedTime = stopTime - startTime;
+        System.out.println("\nShell Sorted Array:");
+        sort.printArray(s2Sarr);
         System.out.println("\nTime Taken: " + elapsedTime + "ms");
     }
     
