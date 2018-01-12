@@ -17,9 +17,11 @@ Bubble sort has the ability to detect if the list is sorted efficiently built in
 
 ## Heap Sort
 Heap Sort is a comparison-based sorting algorithm. Heapsort can be though of as an improved selection sort: like that algorithm, it divides its input into a sorted and an unsorted array, and it iteratively shrinks the unsorted array by extracting the largest element and moving it to the sorted array.
+
 ###Algorithm
 1. Initially build a max heap of element in the array.
 2. The root element, that is array[0], will contain maximum element of the array. After that, swap this element with the last element of the array and heapify the max heap excluding the last element which is already in its correct position and decrease the length of the heap by one.
 3. Repeat step 2 until all elements are in their correct position.
+
 ###Complexity Analysis
 Heap Sort has O(nlogn) time complexities for all the cases (best case, average case, and worst case).
