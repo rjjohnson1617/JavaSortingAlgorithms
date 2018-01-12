@@ -25,6 +25,9 @@ public class Sorting {
         int sSarr[] = {12, 76, 49, 50, 32, 87, 20};
         int iSarr[] = {93, 45, 67, 32, 90, 3, 17, 29};
         int hSarr[] = {12, 54, 76, 43, 89, 12, 10, 9};
+        int qSarr[] = {45, 76, 43, 12, 19, 78, 90, 104};
+        int rSarr[] = {98, 65, 49, 76, 12, 37, 48, 145, 27};
+        char cSarr[] = {'f', 'y', 's', 'p', 'a', 'b', 'n', 'l'};
         
         Sorting sort = new Sorting();
         //BubbleSort
@@ -86,6 +89,46 @@ public class Sorting {
         elapsedTime = stopTime - startTime;
         System.out.println("\nHeap Sorted Array:");
         sort.printArray(hSarr);
+        System.out.println("\nTime Taken: " + elapsedTime + "ms");
+        
+        //Quick Sort
+        System.out.println("\nGiven Quick Sort Array:");
+        sort.printArray(qSarr);
+        int n = qSarr.length;
+        startTime = System.currentTimeMillis();
+        QuickSort qs = new QuickSort();
+        qs.sort(qSarr, 0, n-1);
+        stopTime = System.currentTimeMillis();
+        elapsedTime = stopTime - startTime;
+        System.out.println("\nQuick Sorted Array:");
+        sort.printArray(qSarr);
+        System.out.println("\nTime Taken: " + elapsedTime + "ms");
+        
+        //Radix Sort
+        System.out.println("\nGiven Radix Sort Array:");
+        sort.printArray(rSarr);
+        n = rSarr.length;
+        startTime = System.currentTimeMillis();
+        RadixSort rs = new RadixSort();
+        rs.radixsort(rSarr);
+        stopTime = System.currentTimeMillis();
+        elapsedTime = stopTime - startTime;
+        System.out.println("\nRadix Sorted Array:");
+        sort.printArray(rSarr);
+        System.out.println("\nTime Taken: " + elapsedTime + "ms");
+        
+        //Counting Sort
+        System.out.println("\nGiven Counting Sort Array:");
+        for(int i=0; i<cSarr.length; ++i)
+            System.out.print(cSarr[i] + ", ");
+        startTime = System.currentTimeMillis();
+        CountingSort cs = new CountingSort();
+        cs.sort(cSarr);
+        stopTime = System.currentTimeMillis();
+        elapsedTime = stopTime - startTime;
+        System.out.println("\nCounting Sorted Array:");
+        for(int j=0; j<cSarr.length; ++j)
+            System.out.print(cSarr[j] + ", ");
         System.out.println("\nTime Taken: " + elapsedTime + "ms");
     }
     
